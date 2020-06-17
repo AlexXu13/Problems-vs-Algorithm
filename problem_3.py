@@ -24,9 +24,11 @@ def rearrange_digits(input_list):
     Returns:
        (int),(int): Two maximum sums
     """
-    assert isinstance(input_list, list), "Enter a correct list!"
+    if not isinstance(input_list, list):
+        return []
     length = len(input_list)
-    assert length > 0, "Enter a correct list!"
+    if length <= 0:
+        return []
     input_list = quick_sort(input_list)
     left = ''
     right = ''
@@ -52,3 +54,6 @@ def test_function(test_case):
 
 test_function([[1, 2, 3, 4, 5], [531, 42]])
 test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
+test_function([[], []])
+test_function([[0,0,0,0,0], [000, 00]])
+test_function([[4, 6, 2, 5, 9, 8, 9, 9], [9964, 9852]])

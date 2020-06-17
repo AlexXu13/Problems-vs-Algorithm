@@ -7,7 +7,7 @@
 - Worst case time:  
 RouteTrie: O(n)
 RouteTrieNode: O(1)
-Router:O(n)                    
+Router:O(n^2)                    
 - Space complexity: 
 RouteTrie: O(n)
 RouteTrieNode: O(1)

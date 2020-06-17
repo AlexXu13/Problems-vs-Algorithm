@@ -6,5 +6,5 @@
 - Each Trie includes insert and find opearations
 - I defined a helper function to find suffixes in the outside,so the suffixes finding function can recall the helper function directly
 
-Worst case time:O(n)
+Worst case time:O(n^2)
 Space complexity: O(n)

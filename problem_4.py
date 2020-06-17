@@ -1,3 +1,6 @@
+from collections import OrderedDict
+
+
 def sort_012(input_list):
     """
     Given an input array consisting on only 0, 1, and 2, sort the array in a single traversal.
@@ -8,10 +11,12 @@ def sort_012(input_list):
     if len(input_list) <= 1:
         return input_list
     else:
-        mid_value = input_list[0]
-        low = [i for i in input_list[1:] if i <= mid_value]
-        high = [i for i in input_list[1:] if i > mid_value]
-        return sort_012(low) + [mid_value] + sort_012(high)
+        occurs = OrderedDict()
+        occurs = {0:0, 1:0, 2:0}
+        for num in input_list:
+            occurs[num] = occurs.get(num, 0) + 1
+    return [0] * occurs[0]+[1] * occurs[1]+[2] * occurs[2]
+
 
 def test_function(test_case):
     sorted_array = sort_012(test_case)
@@ -21,6 +26,12 @@ def test_function(test_case):
     else:
         print("Fail")
 
+
 test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
 test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
+#edge cases
+test_function([])
+test_function([0,1])
+test_function([1,2])
+
