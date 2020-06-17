@@ -3,12 +3,13 @@
 
 - I completed this task according to the instructions.
 
-
+define n as unique URLs
+define m as length of the longest piece of URL separated by backslash
 - Worst case time:  
-RouteTrie: O(n)
-RouteTrieNode: O(1)
-Router:O(n^2)                    
+RouteTrie: insert and find O(n)
+RouteTrieNode: lookup O(1)
+Router:add_handlerO(n) lookup O(n*m)                    
 - Space complexity: 
-RouteTrie: O(n)
+RouteTrie: insert and find O(n)
 RouteTrieNode: O(1)
-Router:O(n) 
+Router:add_handlerO(n) lookup O(n*m) 

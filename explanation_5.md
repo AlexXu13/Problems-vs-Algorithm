@@ -6,5 +6,7 @@
 - Each Trie includes insert and find opearations
 - I defined a helper function to find suffixes in the outside,so the suffixes finding function can recall the helper function directly
 
-Worst case time:O(n^2)
-Space complexity: O(n)
+define n as number of characters
+define m as number of words
+Worst case time:O(n*m)
+Space complexity: O(n*m)
